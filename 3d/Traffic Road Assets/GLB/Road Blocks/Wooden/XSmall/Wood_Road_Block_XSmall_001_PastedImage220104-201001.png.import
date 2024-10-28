@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clnbfsni4imoj"
-path="res://.godot/imported/Wood_Road_Block_XSmall_001_PastedImage220104-201001.png-80d676e8bcf5bd34e51c5fbf46af4e04.ctex"
+path.s3tc="res://.godot/imported/Wood_Road_Block_XSmall_001_PastedImage220104-201001.png-80d676e8bcf5bd34e51c5fbf46af4e04.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "cfdf22194a924e5900332229e0b857bb"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://3d/Traffic Road Assets/GLB/Road Blocks/Wooden/XSmall/Wood_Road_Block_XSmall_001_PastedImage220104-201001.png"
-dest_files=["res://.godot/imported/Wood_Road_Block_XSmall_001_PastedImage220104-201001.png-80d676e8bcf5bd34e51c5fbf46af4e04.ctex"]
+dest_files=["res://.godot/imported/Wood_Road_Block_XSmall_001_PastedImage220104-201001.png-80d676e8bcf5bd34e51c5fbf46af4e04.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -34,4 +35,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

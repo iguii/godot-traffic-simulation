@@ -1,8 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://3axwhj3n7174"]
+[gd_scene load_steps=19 format=3 uid="uid://3axwhj3n7174"]
 
+[ext_resource type="Script" path="res://world.gd" id="1_6ycgp"]
 [ext_resource type="Texture2D" uid="uid://c24x1d1ib1mq2" path="res://3d/Materials_StoneAndBricks/4k JPEG/stone_bricks_01/stone_bricks_01_basecolor.jpg" id="1_skea8"]
 [ext_resource type="PackedScene" uid="uid://c14gbo1sr7wns" path="res://car_2.tscn" id="4_g2tss"]
-[ext_resource type="Script" path="res://car_2.gd" id="5_8xgdr"]
 [ext_resource type="PackedScene" uid="uid://dq8gyxketkgb1" path="res://car_1.tscn" id="5_iia4y"]
 [ext_resource type="PackedScene" uid="uid://c6o54ogk8fpfq" path="res://road_straight_1.tscn" id="6_mgjhp"]
 [ext_resource type="PackedScene" uid="uid://cgu4fsi60hikc" path="res://road_straight_2.tscn" id="7_11r5t"]
@@ -10,6 +10,25 @@
 [ext_resource type="PackedScene" uid="uid://u3p0xtqksyw5" path="res://system.tscn" id="7_t5854"]
 [ext_resource type="PackedScene" uid="uid://21qhqrbn56fq" path="res://road_cross_road.tscn" id="8_j8jfn"]
 [ext_resource type="PackedScene" uid="uid://cw55woeuyoby1" path="res://single_lane_curve.tscn" id="9_y4jhg"]
+[ext_resource type="Script" path="res://camera_3d.gd" id="11_7r2ur"]
+
+[sub_resource type="Curve3D" id="Curve3D_8cavv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrfmn"]
+radius = 0.001
+height = 0.002
+
+[sub_resource type="Curve3D" id="Curve3D_53mln"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 1.83145, 1.36544, -0.00906372, 0, 0, 0, 0, 0, 0, 1.45719, 1.17532, -39.2609, 0, 0, 0, 0, 0, 0, -0.787198, 0.840569, -119.812, 0, 0, 0, 0, 0, 0, 0.123691, 0.77877, -139.893),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j73f6"]
+radius = 1.74613
+height = 3.49226
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_241mx"]
 size = Vector2(500, 500)
@@ -20,11 +39,38 @@ albedo_texture = ExtResource("1_skea8")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0f3i2"]
 data = PackedVector3Array(250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, 250, -250, 0, -250, 250, 0, -250)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j73f6"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrfmn"]
-
 [node name="World" type="Node3D"]
+script = ExtResource("1_6ycgp")
+
+[node name="Path3D2" type="Path3D" parent="."]
+curve = SubResource("Curve3D_8cavv")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
+unique_name_in_owner = true
+
+[node name="Car 1" parent="Path3D2/PathFollow3D" instance=ExtResource("5_iia4y")]
+unique_name_in_owner = true
+transform = Transform3D(1, -1.60242e-05, 2.93227e-06, 1.60924e-05, 0.999999, -9.98378e-07, -3.31271e-06, 6.4075e-07, 1, -9.9725, 0.513109, -244.165)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D2/PathFollow3D/Car 1"]
+transform = Transform3D(1, 2.66024e-07, 2.89166e-06, -7.75208e-07, 0.984112, 0.177549, -2.79849e-06, -0.177548, 0.984112, 6.67572e-06, -2.5034e-06, -2.48006)
+shape = SubResource("CapsuleShape3D_xrfmn")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.80819, 0, 245.824)
+curve = SubResource("Curve3D_53mln")
+
+[node name="PathFollow3D_Car2" type="PathFollow3D" parent="Path3D"]
+unique_name_in_owner = true
+transform = Transform3D(0.999928, -4.61784e-05, 0.00953408, -3.63788e-12, 0.999967, 0.00484323, -0.00953426, -0.00484306, 0.999909, 1.83145, 1.36544, -0.00906372)
+
+[node name="car 2" parent="Path3D/PathFollow3D_Car2" instance=ExtResource("4_g2tss")]
+unique_name_in_owner = true
+transform = Transform3D(0.979576, -1.81899e-11, -0.201078, 1.16415e-10, 1, 4.65661e-10, 0.201078, -4.65661e-10, 0.979576, -0.282127, 0.125842, 1.40128)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D_Car2/car 2"]
+transform = Transform3D(1, 3.49246e-10, 0, 3.49246e-10, 1, 5.58794e-09, 0, 0, 1, -0.0409279, 2.27678, -0.563507)
+shape = SubResource("CapsuleShape3D_j73f6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_241mx")
@@ -34,28 +80,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_kpatu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_0f3i2")
-
-[node name="car 2" parent="." instance=ExtResource("4_g2tss")]
-transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 8.81681, 0.215666, 242.968)
-script = ExtResource("5_8xgdr")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="car 2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_j73f6")
-
-[node name="Camera3D" type="Camera3D" parent="car 2/CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0425115, 4, 8.07559)
-current = true
-fov = 61.8
-
-[node name="Car 1" parent="." instance=ExtResource("5_iia4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.97249, 0.513196, -244.165)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car 1"]
-shape = SubResource("CapsuleShape3D_xrfmn")
-
-[node name="Camera3D" type="Camera3D" parent="Car 1"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.92975, -8.1164)
 
 [node name="Road_1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.851074, 0, 0)
@@ -644,3 +668,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.7598, 0.210878, -50.5565)
 
 [node name="Road Cross Road2" parent="." instance=ExtResource("8_j8jfn")]
 transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 15.1117, 0.1448, -14.9074)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6487, 23.631, 277.26)
+fov = 69.8
+script = ExtResource("11_7r2ur")
