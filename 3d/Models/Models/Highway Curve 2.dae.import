@@ -1,0 +1,34 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://coixa3vvrlkpq"
+path="res://.godot/imported/Highway Curve 2.dae-55ccca83cca1f4e06ef9267e61cbb625.scn"
+
+[deps]
+
+source_file="res://3d/Models/Models/Highway Curve 2.dae"
+dest_files=["res://.godot/imported/Highway Curve 2.dae-55ccca83cca1f4e06ef9267e61cbb625.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://be7td7s25j0kr"
+path.s3tc="res://.godot/imported/stone_blackGravel_01_basecolor.jpg-bef98be2f245d0e67d9b826f58670860.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://3d/Materials_StoneAndBricks/4k JPEG/stone_blackGravel_01/stone_blackGravel_01_basecolor.jpg"
+dest_files=["res://.godot/imported/stone_blackGravel_01_basecolor.jpg-bef98be2f245d0e67d9b826f58670860.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

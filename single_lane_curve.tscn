@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw55woeuyoby1"]
+
+[ext_resource type="PackedScene" uid="uid://b7k1hr2eme0cd" path="res://3d/Models/Models/SingleLane Curve.dae" id="1_exdtb"]
+[ext_resource type="Texture2D" uid="uid://b8rbftcedv7hh" path="res://3d/Textures/Textures/Road Colorscheme.png" id="2_2nxy6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_471et"]
+albedo_texture = ExtResource("2_2nxy6")
+
+[node name="SingleLane Curve" instance=ExtResource("1_exdtb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -0.055438, 0, 9.61373)
+
+[node name="SingleLane_Curve_mesh" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_471et")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://21qhqrbn56fq"]
+
+[ext_resource type="PackedScene" uid="uid://dedabehs3xudh" path="res://3d/Models/Models/Road Cross Road.dae" id="1_86igc"]
+[ext_resource type="Texture2D" uid="uid://b8rbftcedv7hh" path="res://3d/Textures/Textures/Road Colorscheme.png" id="2_4h68q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skc30"]
+albedo_texture = ExtResource("2_4h68q")
+
+[node name="Road Cross Road" instance=ExtResource("1_86igc")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7.51586, 0, -7.51878)
+
+[node name="Road_Cross_Road_mesh" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_skc30")

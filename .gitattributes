@@ -1,0 +1,8 @@
+# Normalize EOL for all files that Git considers text files.
+* text=auto eol=lf
+*.zip filter=lfs diff=lfs merge=lfs -text
+3d/Materials_StoneAndBricks.zip filter=lfs diff=lfs merge=lfs -text
+*.glb filter=lfs diff=lfs merge=lfs -text
+*.fbx filter=lfs diff=lfs merge=lfs -text lockable
+*.gltf filter=lfs diff=lfs merge=lfs -text lockable
+.glb filter=lfs diff=lfs merge=lfs -text lockable

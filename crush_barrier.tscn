@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cadwp4ie63u1q"]
+
+[ext_resource type="PackedScene" uid="uid://cwbpxovik02jb" path="res://3d/Traffic Road Assets/GLB/Crush Barriers/Crush_Barrier.glb" id="1_hn2aa"]
+[ext_resource type="Texture2D" uid="uid://fyh6muubse1e" path="res://3d/Traffic Road Assets/GLB/Crush Barriers/Crush_Barrier_001_PastedImage220104-201001.png" id="2_fkb37"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6uj2"]
+albedo_texture = ExtResource("2_fkb37")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixntb"]
+albedo_texture = ExtResource("2_fkb37")
+
+[node name="Crush_Barrier" instance=ExtResource("1_hn2aa")]
+
+[node name="Crush Barrier" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_s6uj2")
+surface_material_override/0 = SubResource("StandardMaterial3D_ixntb")

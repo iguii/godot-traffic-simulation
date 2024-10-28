@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://db5cm3gk1wu2p"
+path="res://.godot/imported/Free Sample-11.obj-bed660e82f5cba16f0fa39812043b08e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Free Sample-11.obj-bed660e82f5cba16f0fa39812043b08e.mesh"]
+
+source_file="res://3d/Free Sample/Free Sample-11.obj"
+dest_files=["res://.godot/imported/Free Sample-11.obj-bed660e82f5cba16f0fa39812043b08e.mesh", "res://.godot/imported/Free Sample-11.obj-bed660e82f5cba16f0fa39812043b08e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

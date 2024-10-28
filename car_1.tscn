@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq8gyxketkgb1"]
+
+[ext_resource type="PackedScene" uid="uid://bp8f65vjxedya" path="res://3d/Models/Models/Car 1.dae" id="1_umyui"]
+[ext_resource type="Texture2D" uid="uid://dtv48cfxupx1l" path="res://3d/Textures/Textures/Car Colorscheme 1.png" id="2_8mkjn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7op51"]
+albedo_texture = ExtResource("2_8mkjn")
+
+[node name="Car 1" instance=ExtResource("1_umyui")]
+
+[node name="Car_1" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0285506, 0.621, -0.0118775)
+
+[node name="Car_1_Model" parent="Car_1" index="0"]
+material_override = SubResource("StandardMaterial3D_7op51")
