@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://3axwhj3n7174"]
+[gd_scene load_steps=28 format=3 uid="uid://3axwhj3n7174"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_6ycgp"]
 [ext_resource type="Texture2D" uid="uid://c24x1d1ib1mq2" path="res://3d/Materials_StoneAndBricks/4k JPEG/stone_bricks_01/stone_bricks_01_basecolor.jpg" id="1_skea8"]
@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://21qhqrbn56fq" path="res://road_cross_road.tscn" id="8_j8jfn"]
 [ext_resource type="PackedScene" uid="uid://cw55woeuyoby1" path="res://single_lane_curve.tscn" id="9_y4jhg"]
 [ext_resource type="Script" path="res://camera_3d.gd" id="11_7r2ur"]
+[ext_resource type="Script" path="res://traffic_light_area.gd" id="12_2y2f3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8egk6"]
+size = Vector3(15.247, 9.60895, 13.29)
 
 [sub_resource type="Curve3D" id="Curve3D_45b2y"]
 _data = {
@@ -44,8 +48,42 @@ albedo_texture = ExtResource("1_skea8")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0f3i2"]
 data = PackedVector3Array(250, 0, 250, -250, 0, 250, 250, 0, -250, -250, 0, 250, -250, 0, -250, 250, 0, -250)
 
+[sub_resource type="SphereMesh" id="SphereMesh_tfywr"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_d1ht1"]
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_rnckm"]
+emission_enabled = true
+emission = Color(0.847064, 0.794352, 0, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_qft6e"]
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y3cpy"]
+
+[sub_resource type="Sky" id="Sky_k14u1"]
+sky_material = SubResource("ProceduralSkyMaterial_y3cpy")
+
+[sub_resource type="Environment" id="Environment_ba8hp"]
+background_mode = 2
+sky = SubResource("Sky_k14u1")
+sky_custom_fov = 138.5
+
 [node name="World" type="Node3D"]
 script = ExtResource("1_6ycgp")
+
+[node name="TrafficLightArea1" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64262, 4.9343, -30.9707)
+
+[node name="TrafficLightArea" type="CollisionShape3D" parent="TrafficLightArea1"]
+shape = SubResource("BoxShape3D_8egk6")
+script = ExtResource("12_2y2f3")
 
 [node name="Path3DCarA1" type="Path3D" parent="."]
 transform = Transform3D(0.930418, -0.366501, 0, 0.340291, 0.86388, 0.371368, -0.136107, -0.345527, 0.928486, -8.23119, 0.412462, -246.582)
@@ -53,7 +91,7 @@ curve = SubResource("Curve3D_45b2y")
 
 [node name="PathFollow3D_CarA1" type="PathFollow3D" parent="Path3DCarA1"]
 unique_name_in_owner = true
-transform = Transform3D(-0.988201, -0.048396, 0.145289, 7.45055e-09, 0.948746, 0.316029, -0.153137, 0.312301, -0.937555, 0.412043, -3.96697, 12.0056)
+transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
 
 [node name="CarA1" parent="Path3DCarA1/PathFollow3D_CarA1" instance=ExtResource("5_iia4y")]
 unique_name_in_owner = true
@@ -69,7 +107,7 @@ curve = SubResource("Curve3D_45b2y")
 
 [node name="PathFollow3D_CarA3" type="PathFollow3D" parent="Path3DCarA3"]
 unique_name_in_owner = true
-transform = Transform3D(-0.988201, -0.048396, 0.145289, 7.45055e-09, 0.948746, 0.316029, -0.153137, 0.312301, -0.937555, 0.412043, -3.96697, 12.0056)
+transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
 
 [node name="CarA1" parent="Path3DCarA3/PathFollow3D_CarA3" instance=ExtResource("5_iia4y")]
 transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
@@ -84,7 +122,7 @@ curve = SubResource("Curve3D_45b2y")
 
 [node name="PathFollow3D_CarA2" type="PathFollow3D" parent="Path3DCarA2"]
 unique_name_in_owner = true
-transform = Transform3D(-0.988201, -0.048396, 0.145289, 7.45055e-09, 0.948746, 0.316029, -0.153137, 0.312301, -0.937555, 0.412043, -3.96697, 12.0056)
+transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
 
 [node name="CarA1" parent="Path3DCarA2/PathFollow3D_CarA2" instance=ExtResource("5_iia4y")]
 transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
@@ -99,7 +137,7 @@ curve = SubResource("Curve3D_45b2y")
 
 [node name="PathFollow3D_CarA4" type="PathFollow3D" parent="Path3DCarA4"]
 unique_name_in_owner = true
-transform = Transform3D(-0.988201, -0.048396, 0.145289, 7.45055e-09, 0.948746, 0.316029, -0.153137, 0.312301, -0.937555, 0.412043, -3.96697, 12.0056)
+transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
 
 [node name="CarA1" parent="Path3DCarA4/PathFollow3D_CarA4" instance=ExtResource("5_iia4y")]
 transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
@@ -114,7 +152,7 @@ curve = SubResource("Curve3D_45b2y")
 
 [node name="PathFollow3D_CarA5" type="PathFollow3D" parent="Path3DCarA5"]
 unique_name_in_owner = true
-transform = Transform3D(-0.988201, -0.048396, 0.145289, 7.45055e-09, 0.948746, 0.316029, -0.153137, 0.312301, -0.937555, 0.412043, -3.96697, 12.0056)
+transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
 
 [node name="CarA1" parent="Path3DCarA5/PathFollow3D_CarA5" instance=ExtResource("5_iia4y")]
 transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
@@ -799,3 +837,21 @@ transform = Transform3D(2.1, 0, 0, 0, 2.1, 0, 0, 0, 2.1, 15.1117, 0.1448, -14.90
 transform = Transform3D(-0.0505929, -0.724445, 0.687473, 0, 0.688355, 0.725374, -0.998719, 0.0366988, -0.0348259, 80.6876, 91.7637, -5.30828)
 fov = 82.6
 script = ExtResource("11_7r2ur")
+
+[node name="RedLight1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35524, 7.4868, -16.1009)
+mesh = SubResource("SphereMesh_tfywr")
+surface_material_override/0 = SubResource("ORMMaterial3D_d1ht1")
+
+[node name="YellowLight1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46494, 7.4868, -16.1009)
+mesh = SubResource("SphereMesh_tfywr")
+surface_material_override/0 = SubResource("ORMMaterial3D_rnckm")
+
+[node name="GreenLight1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.55605, 7.4868, -16.1009)
+mesh = SubResource("SphereMesh_tfywr")
+surface_material_override/0 = SubResource("ORMMaterial3D_qft6e")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ba8hp")
