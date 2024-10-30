@@ -5,7 +5,9 @@ extends Node3D
 	["CarA2", "CarB2"],
 	["CarA3", "CarB3"],
 	["CarA4", "CarB4"],
-	["CarA5", "CarB5"]
+	["CarA5", "CarB5"],
+	["CarA6", "CarB6"],
+	["CarA7", "CarB7"]
 ]
 
 @onready var move_speeds = {
@@ -13,7 +15,9 @@ extends Node3D
 	"CarA2": 0.25 * 100, "CarB2": 0.25 * 100,
 	"CarA3": 0.20 * 100, "CarB3": 0.20 * 100,
 	"CarA4": 0.19 * 100, "CarB4": 0.19 * 100,
-	"CarA5": 0.17 * 100, "CarB5": 0.17 * 100
+	"CarA5": 0.17 * 100, "CarB5": 0.17 * 100,
+	"CarA6": 0.16 * 100, "CarB6": 0.16 * 100,
+	"CarA7": 0.15 * 100, "CarB7": 0.15 * 100,
 }
 
 var original_speeds = {}  # Para almacenar las velocidades originales

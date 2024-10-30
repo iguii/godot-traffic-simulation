@@ -19,7 +19,7 @@ size = Vector3(15.247, 9.60895, 52.6387)
 
 [sub_resource type="Curve3D" id="Curve3D_45b2y"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.412043, -3.96697, 12.0056, 0, 0, 0, 0, 0, 0, -2.05981, -9.34367, 27.9565, 0, 0, 0, 0, 0, 0, -3.77794, -14.7032, 41.656, 0, 0, 0, 0, 0, 0, -6.63449, -20.7623, 57.7401, 0, 0, 0, 0, 0, 0, -21.4754, -59.9571, 164.294, -0.44976, 0.198959, -0.050705, 0.44976, -0.198959, 0.050705, -22.1898, -63.7902, 173.866, 0, 0, 0, 0, 0, 0, -22.1929, -68.714, 185.323, 0, 0, 0, 0, 0, 0, -22.0241, -71.2649, 191.102, 1.51776, -0.46711, -0.304153, -1.51776, 0.46711, 0.304153, -24.8945, -76.1465, 205.088, 0, 0, 0, 0, 0, 0, -38.0717, -102.812, 279.193),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.412043, -3.96697, 12.0056, 0, 0, 0, 0, 0, 0, -2.05981, -9.34367, 27.9565, 0, 0, 0, 0, 0, 0, -3.77794, -14.7032, 41.656, 0, 0, 0, 0, 0, 0, -6.63449, -20.7623, 57.7401, 0, 0, 0, 0, 0, 0, -21.4754, -59.9571, 164.294, -0.44976, 0.198959, -0.050705, 0.44976, -0.198959, 0.050705, -22.1898, -63.7902, 173.866, 0, 0, 0, 0, 0, 0, -22.1929, -68.714, 185.323, 0, 0, 0, 0, 0, 0, -22.0241, -71.2649, 191.102, 1.51776, -0.46711, -0.304153, -1.51776, 0.46711, 0.304153, -24.8945, -76.1465, 205.088, 0, 0, 0, 0, 0, 0, -63.286, -166.823, 451.199),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 10
@@ -33,7 +33,7 @@ height = 0.002
 [sub_resource type="Curve3D" id="Curve3D_53mln"]
 bake_interval = 0.01
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.10966, 1.1753, -8.26555, 0, 0, 0, 0, 0, 0, 2.10966, 1.1753, -30.5385, 0, 0, 0, 0, 0, 0, 1.6972, 1.1753, -65.3228, 0, 0, 0, 0, 0, 0, 1.73539, 1.1753, -106.94, 0, 0, 0, 0, 0, 0, 0.923795, 1.1753, -143.959, 0, 0, 0, 0, 0, 0, 1.2175, 1.1753, -190.72, 0, 0, 0, 0, 0, 0, -1.06597, 1.1753, -210.817, -1.73819, 0, 1.96735, 1.73819, 0, -1.96735, 0.899559, 1.1753, -223.429, 0, 0, 0, 0, 0, 0, 1.95357, 1.1753, -225.631, 0, 0, 0, 0, 0, 0, 1.95414, 1.1753, -229.066, 0, 0, 0, 0, 0, 0, 2.16402, 1.1753, -258.521, 0, 0, 0, 0, 0, 0, 2.6965, 1.1753, -301.284),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.10966, 1.1753, -8.26555, 0, 0, 0, 0, 0, 0, 2.10966, 1.1753, -30.5385, 0, 0, 0, 0, 0, 0, 1.6972, 1.1753, -65.3228, 0, 0, 0, 0, 0, 0, 1.73539, 1.1753, -106.94, 0, 0, 0, 0, 0, 0, 0.923795, 1.1753, -143.959, 0, 0, 0, 0, 0, 0, 1.2175, 1.1753, -190.72, 0, 0, 0, 0, 0, 0, -1.06597, 1.1753, -210.817, -1.73819, 0, 1.96735, 1.73819, 0, -1.96735, 0.899559, 1.1753, -223.429, 0, 0, 0, 0, 0, 0, 1.95357, 1.1753, -225.631, 0, 0, 0, 0, 0, 0, 1.95414, 1.1753, -229.066, 0, 0, 0, 0, 0, 0, 2.16402, 1.1753, -258.521, 0, 0, 0, 0, 0, 0, 2.6965, 1.1753, -476.343),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 12
@@ -865,3 +865,59 @@ surface_material_override/0 = SubResource("ORMMaterial3D_qft6e")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ba8hp")
+
+[node name="Path3DCarA6" type="Path3D" parent="."]
+transform = Transform3D(0.930418, -0.366501, 0, 0.340291, 0.86388, 0.371368, -0.136107, -0.345527, 0.928486, -8.23119, 0.412462, -246.582)
+curve = SubResource("Curve3D_45b2y")
+
+[node name="PathFollow3D_CarA6" type="PathFollow3D" parent="Path3DCarA6"]
+transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
+
+[node name="CarA6" parent="Path3DCarA6/PathFollow3D_CarA6" instance=ExtResource("5_iia4y")]
+transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA6/PathFollow3D_CarA6/CarA6"]
+transform = Transform3D(1, 2.66024e-07, 2.89166e-06, -7.75208e-07, 0.984112, 0.177549, -2.79849e-06, -0.177548, 0.984112, 6.67572e-06, -2.5034e-06, -2.48006)
+shape = SubResource("CapsuleShape3D_xrfmn")
+
+[node name="Path3DCarA7" type="Path3D" parent="."]
+transform = Transform3D(0.930418, -0.366501, 0, 0.340291, 0.86388, 0.371368, -0.136107, -0.345527, 0.928486, -8.23119, 0.412462, -246.582)
+curve = SubResource("Curve3D_45b2y")
+
+[node name="PathFollow3D_CarA7" type="PathFollow3D" parent="Path3DCarA7"]
+transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
+
+[node name="CarA7" parent="Path3DCarA7/PathFollow3D_CarA7" instance=ExtResource("5_iia4y")]
+transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA7/PathFollow3D_CarA7/CarA7"]
+transform = Transform3D(1, 2.66024e-07, 2.89166e-06, -7.75208e-07, 0.984112, 0.177549, -2.79849e-06, -0.177548, 0.984112, 6.67572e-06, -2.5034e-06, -2.48006)
+shape = SubResource("CapsuleShape3D_xrfmn")
+
+[node name="Path3DCarB6" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47052, 0.00621796, 251.948)
+curve = SubResource("Curve3D_53mln")
+
+[node name="PathFollow3D_CarB6" type="PathFollow3D" parent="Path3DCarB6"]
+transform = Transform3D(0.999827, 0, 0, 0, 0.999977, 0, 0, 0, 0.999923, 2.10966, 1.1753, -8.26555)
+
+[node name="CarB6" parent="Path3DCarB6/PathFollow3D_CarB6" instance=ExtResource("4_g2tss")]
+transform = Transform3D(0.999999, 0, -0.00174533, 0, 1, 0, 0.00174533, 0, 0.999999, -0.282127, 0.125842, 1.40128)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarB6/PathFollow3D_CarB6/CarB6"]
+transform = Transform3D(1, 3.49246e-10, 0, 3.49246e-10, 1, 5.58794e-09, 0, 0, 1, -0.0409279, 2.27678, -0.563507)
+shape = SubResource("CapsuleShape3D_j73f6")
+
+[node name="Path3DCarB7" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47052, 0.00621796, 251.948)
+curve = SubResource("Curve3D_53mln")
+
+[node name="PathFollow3D_CarB7" type="PathFollow3D" parent="Path3DCarB7"]
+transform = Transform3D(0.999827, 0, 0, 0, 0.999977, 0, 0, 0, 0.999923, 2.10966, 1.1753, -8.26555)
+
+[node name="CarB7" parent="Path3DCarB7/PathFollow3D_CarB7" instance=ExtResource("4_g2tss")]
+transform = Transform3D(0.999999, 0, -0.00174533, 0, 1, 0, 0.00174533, 0, 0.999999, -0.282127, 0.125842, 1.40128)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarB7/PathFollow3D_CarB7/CarB7"]
+transform = Transform3D(1, 3.49246e-10, 0, 3.49246e-10, 1, 5.58794e-09, 0, 0, 1, -0.0409279, 2.27678, -0.563507)
+shape = SubResource("CapsuleShape3D_j73f6")
