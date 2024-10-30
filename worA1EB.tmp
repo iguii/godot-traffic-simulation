@@ -111,7 +111,6 @@ unique_name_in_owner = true
 transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
 
 [node name="CarA2" parent="Path3DCarA3/PathFollow3D_CarA3" instance=ExtResource("5_iia4y")]
-unique_name_in_owner = true
 transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA3/PathFollow3D_CarA3/CarA2"]
@@ -127,7 +126,6 @@ unique_name_in_owner = true
 transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
 
 [node name="CarA3" parent="Path3DCarA2/PathFollow3D_CarA2" instance=ExtResource("5_iia4y")]
-unique_name_in_owner = true
 transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA2/PathFollow3D_CarA2/CarA3"]
@@ -143,7 +141,6 @@ unique_name_in_owner = true
 transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
 
 [node name="CarA4" parent="Path3DCarA4/PathFollow3D_CarA4" instance=ExtResource("5_iia4y")]
-unique_name_in_owner = true
 transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA4/PathFollow3D_CarA4/CarA4"]
@@ -159,7 +156,6 @@ unique_name_in_owner = true
 transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
 
 [node name="CarA5" parent="Path3DCarA5/PathFollow3D_CarA5" instance=ExtResource("5_iia4y")]
-unique_name_in_owner = true
 transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA5/PathFollow3D_CarA5/CarA5"]
