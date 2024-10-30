@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://traffic_light_area.gd" id="12_2y2f3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8egk6"]
-size = Vector3(15.247, 9.60895, 13.29)
+size = Vector3(15.247, 9.60895, 19.9019)
 
 [sub_resource type="Curve3D" id="Curve3D_45b2y"]
 _data = {
@@ -82,6 +82,7 @@ script = ExtResource("1_6ycgp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64262, 4.9343, -30.9707)
 
 [node name="TrafficLightArea" type="CollisionShape3D" parent="TrafficLightArea1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.30591)
 shape = SubResource("BoxShape3D_8egk6")
 script = ExtResource("12_2y2f3")
 
@@ -109,10 +110,10 @@ curve = SubResource("Curve3D_45b2y")
 unique_name_in_owner = true
 transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
 
-[node name="CarA1" parent="Path3DCarA3/PathFollow3D_CarA3" instance=ExtResource("5_iia4y")]
+[node name="CarA2" parent="Path3DCarA3/PathFollow3D_CarA3" instance=ExtResource("5_iia4y")]
 transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA3/PathFollow3D_CarA3/CarA1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA3/PathFollow3D_CarA3/CarA2"]
 transform = Transform3D(1, 2.66024e-07, 2.89166e-06, -7.75208e-07, 0.984112, 0.177549, -2.79849e-06, -0.177548, 0.984112, 6.67572e-06, -2.5034e-06, -2.48006)
 shape = SubResource("CapsuleShape3D_xrfmn")
 
@@ -124,10 +125,10 @@ curve = SubResource("Curve3D_45b2y")
 unique_name_in_owner = true
 transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
 
-[node name="CarA1" parent="Path3DCarA2/PathFollow3D_CarA2" instance=ExtResource("5_iia4y")]
+[node name="CarA3" parent="Path3DCarA2/PathFollow3D_CarA2" instance=ExtResource("5_iia4y")]
 transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA2/PathFollow3D_CarA2/CarA1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA2/PathFollow3D_CarA2/CarA3"]
 transform = Transform3D(1, 2.66024e-07, 2.89166e-06, -7.75208e-07, 0.984112, 0.177549, -2.79849e-06, -0.177548, 0.984112, 6.67572e-06, -2.5034e-06, -2.48006)
 shape = SubResource("CapsuleShape3D_xrfmn")
 
@@ -139,10 +140,10 @@ curve = SubResource("Curve3D_45b2y")
 unique_name_in_owner = true
 transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
 
-[node name="CarA1" parent="Path3DCarA4/PathFollow3D_CarA4" instance=ExtResource("5_iia4y")]
+[node name="CarA4" parent="Path3DCarA4/PathFollow3D_CarA4" instance=ExtResource("5_iia4y")]
 transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA4/PathFollow3D_CarA4/CarA1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA4/PathFollow3D_CarA4/CarA4"]
 transform = Transform3D(1, 2.66024e-07, 2.89166e-06, -7.75208e-07, 0.984112, 0.177549, -2.79849e-06, -0.177548, 0.984112, 6.67572e-06, -2.5034e-06, -2.48006)
 shape = SubResource("CapsuleShape3D_xrfmn")
 
@@ -154,10 +155,10 @@ curve = SubResource("Curve3D_45b2y")
 unique_name_in_owner = true
 transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746, 0.316029, -0.153138, 0.312302, -0.937555, 0.412043, -3.96697, 12.0056)
 
-[node name="CarA1" parent="Path3DCarA5/PathFollow3D_CarA5" instance=ExtResource("5_iia4y")]
+[node name="CarA5" parent="Path3DCarA5/PathFollow3D_CarA5" instance=ExtResource("5_iia4y")]
 transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA5/PathFollow3D_CarA5/CarA1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA5/PathFollow3D_CarA5/CarA5"]
 transform = Transform3D(1, 2.66024e-07, 2.89166e-06, -7.75208e-07, 0.984112, 0.177549, -2.79849e-06, -0.177548, 0.984112, 6.67572e-06, -2.5034e-06, -2.48006)
 shape = SubResource("CapsuleShape3D_xrfmn")
 
@@ -185,10 +186,10 @@ curve = SubResource("Curve3D_53mln")
 unique_name_in_owner = true
 transform = Transform3D(0.999827, 0, 0, 0, 0.999977, 0, 0, 0, 0.999923, 2.10966, 1.1753, -8.26555)
 
-[node name="CarB1" parent="Path3DCarB2/PathFollow3D_CarB2" instance=ExtResource("4_g2tss")]
+[node name="CarB2" parent="Path3DCarB2/PathFollow3D_CarB2" instance=ExtResource("4_g2tss")]
 transform = Transform3D(0.999999, 0, -0.00174533, 0, 1, 0, 0.00174533, 0, 0.999999, -0.282127, 0.125842, 1.40128)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarB2/PathFollow3D_CarB2/CarB1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarB2/PathFollow3D_CarB2/CarB2"]
 transform = Transform3D(1, 3.49246e-10, 0, 3.49246e-10, 1, 5.58794e-09, 0, 0, 1, -0.0409279, 2.27678, -0.563507)
 shape = SubResource("CapsuleShape3D_j73f6")
 
@@ -200,10 +201,10 @@ curve = SubResource("Curve3D_53mln")
 unique_name_in_owner = true
 transform = Transform3D(0.999827, 0, 0, 0, 0.999977, 0, 0, 0, 0.999923, 2.10966, 1.1753, -8.26555)
 
-[node name="CarB1" parent="Path3DCarB3/PathFollow3D_CarB3" instance=ExtResource("4_g2tss")]
+[node name="CarB3" parent="Path3DCarB3/PathFollow3D_CarB3" instance=ExtResource("4_g2tss")]
 transform = Transform3D(0.999999, 0, -0.00174533, 0, 1, 0, 0.00174533, 0, 0.999999, -0.282127, 0.125842, 1.40128)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarB3/PathFollow3D_CarB3/CarB1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarB3/PathFollow3D_CarB3/CarB3"]
 transform = Transform3D(1, 3.49246e-10, 0, 3.49246e-10, 1, 5.58794e-09, 0, 0, 1, -0.0409279, 2.27678, -0.563507)
 shape = SubResource("CapsuleShape3D_j73f6")
 
@@ -215,10 +216,10 @@ curve = SubResource("Curve3D_53mln")
 unique_name_in_owner = true
 transform = Transform3D(0.999827, 0, 0, 0, 0.999977, 0, 0, 0, 0.999923, 2.10966, 1.1753, -8.26555)
 
-[node name="CarB1" parent="Path3DCarB4/PathFollow3D_CarB4" instance=ExtResource("4_g2tss")]
+[node name="CarB4" parent="Path3DCarB4/PathFollow3D_CarB4" instance=ExtResource("4_g2tss")]
 transform = Transform3D(0.999999, 0, -0.00174533, 0, 1, 0, 0.00174533, 0, 0.999999, -0.282127, 0.125842, 1.40128)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarB4/PathFollow3D_CarB4/CarB1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarB4/PathFollow3D_CarB4/CarB4"]
 transform = Transform3D(1, 3.49246e-10, 0, 3.49246e-10, 1, 5.58794e-09, 0, 0, 1, -0.0409279, 2.27678, -0.563507)
 shape = SubResource("CapsuleShape3D_j73f6")
 
@@ -229,10 +230,10 @@ curve = SubResource("Curve3D_53mln")
 [node name="PathFollow3D_CarB5" type="PathFollow3D" parent="Path3DCarB5"]
 transform = Transform3D(0.999827, 0, 0, 0, 0.999977, 0, 0, 0, 0.999923, 2.10966, 1.1753, -8.26555)
 
-[node name="CarB1" parent="Path3DCarB5/PathFollow3D_CarB5" instance=ExtResource("4_g2tss")]
+[node name="CarB5" parent="Path3DCarB5/PathFollow3D_CarB5" instance=ExtResource("4_g2tss")]
 transform = Transform3D(0.999999, 0, -0.00174533, 0, 1, 0, 0.00174533, 0, 0.999999, -0.282127, 0.125842, 1.40128)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarB5/PathFollow3D_CarB5/CarB1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarB5/PathFollow3D_CarB5/CarB5"]
 transform = Transform3D(1, 3.49246e-10, 0, 3.49246e-10, 1, 5.58794e-09, 0, 0, 1, -0.0409279, 2.27678, -0.563507)
 shape = SubResource("CapsuleShape3D_j73f6")
 
