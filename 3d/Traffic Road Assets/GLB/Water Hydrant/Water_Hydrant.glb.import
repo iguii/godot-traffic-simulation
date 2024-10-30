@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c2yiaraqdkk3d"
-path="res://.godot/imported/Water_Hydrant.glb-c7706496eeaa02f1ae707ac48ef2742a.scn"
+valid=false
 
 [deps]
 
 source_file="res://3d/Traffic Road Assets/GLB/Water Hydrant/Water_Hydrant.glb"
-dest_files=["res://.godot/imported/Water_Hydrant.glb-c7706496eeaa02f1ae707ac48ef2742a.scn"]
 
 [params]
 

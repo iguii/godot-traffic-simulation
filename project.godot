@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 import/blender/enabled=false
 import/fbx/enabled=false
 
+[global_group]
+
+CarsA=""
+
 [rendering]
 
 renderer/rendering_method="mobile"

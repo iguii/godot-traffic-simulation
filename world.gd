@@ -14,12 +14,17 @@ extends Node3D
 	"CarA1": 0.30 * 100, "CarB1": 0.30 * 100,
 	"CarA2": 0.25 * 100, "CarB2": 0.25 * 100,
 	"CarA3": 0.20 * 100, "CarB3": 0.20 * 100,
-	"CarA4": 0.19 * 100, "CarB4": 0.19 * 100,
-	"CarA5": 0.17 * 100, "CarB5": 0.17 * 100,
-	"CarA6": 0.16 * 100, "CarB6": 0.16 * 100,
-	"CarA7": 0.15 * 100, "CarB7": 0.15 * 100,
+	"CarA4": 0.15 * 100, "CarB4": 0.19 * 100,
+	"CarA5": 0.10 * 100, "CarB5": 0.17 * 100,
+	"CarA6": 0.08 * 100, "CarB6": 0.16 * 100,
+	"CarA7": 0.07 * 100, "CarB7": 0.15 * 100,
 }
 
+
+@onready var carA1Area3d = %Area3DCarA2  # Referencia al nodo Area3D.
+var redLight = 0;
+var yellowLight = 0;
+var greenLight = 0;
 var original_speeds = {}  # Para almacenar las velocidades originales
 var active_cars = []
 
@@ -36,48 +41,85 @@ func set_emission_energy(target: MeshInstance3D, energy: float) -> void:
 
 # Alterna entre las luces del semáforo
 func start_traffic_light_cycle() -> void:
+	
 	set_emission_energy($RedLight1, 1.5)
 	stop = true
+	redLight = 1;
+	greenLight = 0;
 	set_emission_energy($YellowLight1, 0)
 	set_emission_energy($GreenLight1, 0)
 
 	await get_tree().create_timer(3.0).timeout
-
+	redLight = 0;
+	
 	set_emission_energy($RedLight1, 0)
-	set_emission_energy($YellowLight1, 1.5)
+	set_emission_energy($YellowLight1, 1)
 	stop = true
+	yellowLight = 1;
+	
 
 	await get_tree().create_timer(3.0).timeout
-
+	yellowLight = 0;
 	set_emission_energy($YellowLight1, 0)
 	set_emission_energy($GreenLight1, 1.5)
+	greenLight = 1;
 	stop = false
+	
+	
+	
 	# Reanudar la velocidad de los autos cuando el semáforo está en verde
 	for car_name in active_cars:
 		if original_speeds.has(car_name):
 			move_speeds[car_name] = original_speeds[car_name]
 
 
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1).timeout
 
 	start_traffic_light_cycle()
 
 func stop_car(car_name: String):
 	print("Deteniendo coche: " + car_name)
 	# Establece la velocidad a cero
-	move_speeds[car_name] = 0  # Detener el coche ajustando su velocidad a cero
+	move_speeds[car_name] = 0
+	  # Detener el coche ajustando su velocidad a cero
+func reduce_speed(car_name: String):
+	move_speeds[car_name] *= 0.5
+	
+
+func restore_speed(car_name: String):
+	move_speeds[car_name] *= 2
+	
 
 # Detener el tráfico en rojo
 func _on_body_entered(body):
-	if body.name in move_speeds.keys():  # Verifica si el cuerpo es un auto
+	if body.name in move_speeds.keys():
+		if yellowLight == 1:
+			reduce_speed(body.name)
+		if redLight == 1:
+			stop_car(body.name)  # Verifica si el cuerpo es un auto
 		print("Cuerpo colisionado: " + body.name)
 		if stop:
 			stop_car(body.name)  # Deten el auto
+
+func _on_body_entered_car_a1(body):
+	if body.is_in_group("CarsA"):  # Si el objeto es otro auto.
+		reduce_speed(body.name)
+
+# Cuando un cuerpo sale del área de proximidad.
+func _on_body_exited_car_a1(body):
+	if body.is_in_group("CarsA"):
+		restore_speed(body.name)
+	
+
+
+
 
 # Función _ready() para inicializar
 func _ready() -> void:
 	$TrafficLightArea1.connect("body_entered", Callable(self, "_on_body_entered"))
 	$TrafficLightArea1.connect("body_exited", Callable(self, "_on_body_exited"))  # Conectar señal para cuerpos que salen
+	carA1Area3d.connect("body_entered", Callable(self, "_on_body_entered_car_a1"))
+	carA1Area3d.connect("body_exited", Callable(self, "_on_body_exited_car_a1"))
 	start_cars_with_delay()
 	
 	# Almacena las velocidades originales

@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bglxtlviir0qn"
-path="res://.godot/imported/Streetlights.glb-e175efb03d9e20d96f66ac4884b11645.scn"
+valid=false
 
 [deps]
 
 source_file="res://3d/Traffic Road Assets/GLB/Streetlights/Streetlights.glb"
-dest_files=["res://.godot/imported/Streetlights.glb-e175efb03d9e20d96f66ac4884b11645.scn"]
 
 [params]
 
