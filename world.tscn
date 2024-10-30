@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://3axwhj3n7174"]
+[gd_scene load_steps=30 format=3 uid="uid://3axwhj3n7174"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_6ycgp"]
 [ext_resource type="Texture2D" uid="uid://c24x1d1ib1mq2" path="res://3d/Materials_StoneAndBricks/4k JPEG/stone_bricks_01/stone_bricks_01_basecolor.jpg" id="1_skea8"]
+[ext_resource type="Script" path="res://traffic_light_area_1.gd" id="2_lyl18"]
 [ext_resource type="PackedScene" uid="uid://c14gbo1sr7wns" path="res://car_2.tscn" id="4_g2tss"]
 [ext_resource type="PackedScene" uid="uid://dq8gyxketkgb1" path="res://car_1.tscn" id="5_iia4y"]
 [ext_resource type="PackedScene" uid="uid://c6o54ogk8fpfq" path="res://road_straight_1.tscn" id="6_mgjhp"]
@@ -22,6 +23,8 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 10
+
+[sub_resource type="GDScript" id="GDScript_alu26"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrfmn"]
 radius = 0.001
@@ -80,6 +83,7 @@ script = ExtResource("1_6ycgp")
 
 [node name="TrafficLightArea1" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64262, 4.9343, -30.9707)
+script = ExtResource("2_lyl18")
 
 [node name="TrafficLightArea" type="CollisionShape3D" parent="TrafficLightArea1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.30591)
@@ -97,6 +101,7 @@ transform = Transform3D(-0.988201, -0.0483963, 0.145289, -3.72528e-09, 0.948746,
 [node name="CarA1" parent="Path3DCarA1/PathFollow3D_CarA1" instance=ExtResource("5_iia4y")]
 unique_name_in_owner = true
 transform = Transform3D(-0.914824, -0.4023, -0.0354675, -0.398249, 0.913215, -0.0862551, 0.0670898, -0.0647831, -0.995645, 1.57326, -0.201988, 11.8365)
+script = SubResource("GDScript_alu26")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path3DCarA1/PathFollow3D_CarA1/CarA1"]
 transform = Transform3D(1, 2.66024e-07, 2.89166e-06, -7.75208e-07, 0.984112, 0.177549, -2.79849e-06, -0.177548, 0.984112, 6.67572e-06, -2.5034e-06, -2.48006)
