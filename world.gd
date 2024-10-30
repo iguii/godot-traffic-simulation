@@ -43,16 +43,16 @@ func start_traffic_light_cycle() -> void:
 	set_emission_energy($YellowLight1, 1.5)
 	stop = true
 
-	# Reanudar la velocidad de los autos cuando el semáforo está en verde
-	for car_name in active_cars:
-		if original_speeds.has(car_name):
-			move_speeds[car_name] = original_speeds[car_name]
-
 	await get_tree().create_timer(3.0).timeout
 
 	set_emission_energy($YellowLight1, 0)
 	set_emission_energy($GreenLight1, 1.5)
 	stop = false
+	# Reanudar la velocidad de los autos cuando el semáforo está en verde
+	for car_name in active_cars:
+		if original_speeds.has(car_name):
+			move_speeds[car_name] = original_speeds[car_name]
+
 
 	await get_tree().create_timer(1.5).timeout
 
@@ -88,7 +88,9 @@ func _process(delta: float) -> void:
 		if path_3d:
 			var path_follow = path_3d.get_node_or_null("PathFollow3D_" + car_name)
 			if path_follow:
-				path_follow.progress += move_speeds[car_name] * delta
+				# Solo mueve el coche si no está detenido
+				if move_speeds[car_name] > 0:
+					path_follow.progress += move_speeds[car_name] * delta
 			else:
 				print("PathFollow3D no encontrado para: " + car_name)
 		else:
